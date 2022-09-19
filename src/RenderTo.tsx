@@ -6,7 +6,7 @@ export const RenderTo = ({
   children,
 }: {
   destination: string;
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
 }) => {
   const subscriber = useRenderDestination();
 

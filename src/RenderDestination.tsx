@@ -1,13 +1,27 @@
-import React, {useCallback, useSyncExternalStore} from 'react';
+import React, {
+  ReactElement,
+  useCallback,
+  useRef,
+  useSyncExternalStore,
+} from 'react';
 import {useRenderDestination} from './RenderDestinationProvider';
+import {uuid} from './utils/uuid';
 
-export const RenderDestination = ({name}: {name: string}) => {
+export const RenderDestination = ({
+  name,
+  renderer = (container) => <>{container}</>,
+}: {
+  name: string;
+  renderer: (container: ReactElement | ReactElement[]) => ReactElement;
+}): ReactElement | null => {
+  const id = useRef(uuid());
+
   const subscriber = useRenderDestination();
 
   const container = useSyncExternalStore(
     useCallback(
       (callback) => {
-        return subscriber.subscribe(name, callback);
+        return subscriber.subscribe(name, id.current, callback);
       },
       [subscriber, name],
     ),
@@ -16,5 +30,5 @@ export const RenderDestination = ({name}: {name: string}) => {
     },
   );
 
-  return <>container</>;
+  return container ? renderer(container) : null;
 };
