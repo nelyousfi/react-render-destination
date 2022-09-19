@@ -24,8 +24,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/index.{ts,tsx}\"",
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "build": "tsc && mkdir -p example/ReactNativeExample/node_modules/react-render-destination && cp -r package.json dist example/ReactNativeExample/node_modules/react-render-destination"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.1.0",
