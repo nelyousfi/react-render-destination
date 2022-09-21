@@ -1,11 +1,9 @@
-import React, {
-  ReactElement,
-  useCallback,
-  useRef,
-  useSyncExternalStore,
-} from 'react';
+import React, {ReactElement, useCallback, useRef} from 'react';
+import useSyncExternalStoreExports from 'use-sync-external-store/shim';
 import {useRenderDestination} from './RenderDestinationProvider';
 import {uuid} from './utils/uuid';
+
+const {useSyncExternalStore} = useSyncExternalStoreExports;
 
 export const RenderDestination = ({
   name,

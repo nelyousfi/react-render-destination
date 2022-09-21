@@ -23,7 +23,7 @@ const Toast = ({onHide}: {onHide: () => void}) => {
 };
 
 const HomeScreen = () => {
-  const [visible, toggleVisibility] = useState(true);
+  const [visible, toggleVisibility] = useState(false);
 
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
