@@ -10,7 +10,7 @@ export const RenderDestination = ({
   renderer = (container) => <>{container}</>,
 }: {
   name: string;
-  renderer: (container: ReactElement | ReactElement[]) => ReactElement;
+  renderer?: (container: ReactElement | ReactElement[]) => ReactElement;
 }): ReactElement | null => {
   const id = useRef(uuid());
 

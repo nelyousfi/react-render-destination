@@ -1,6 +1,6 @@
 {
   "name": "react-render-destination",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React/ReactNative library based on useSyncExternalStore to render things from some places into others",
   "author": "Naoufal ELYOUSSOUFI <n.elyousfi@gmail.com> (https://github.com/nelyousfi)",
   "main": "dist/index.js",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "lint": "eslint \"src/index.{ts,tsx}\"",
-    "build": "tsc"
+    "build": "tsc && mkdir -p example/ReactNativeExample/node_modules/react-render-destination && cp -r package.json dist example/ReactNativeExample/node_modules/react-render-destination"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.1.0",
