@@ -14,8 +14,10 @@ const Toast = ({onHide}: {onHide: () => void}) => {
         style={{
           color: 'black',
           fontSize: 16,
+          flex: 1,
         }}>
-        Hello I am a toast 👋
+        Hello I am a toast 👋 and I am rendered in the root App component from
+        HomeScreen
       </Text>
       <Button title={'Hide'} onPress={onHide} />
     </RenderTo>
@@ -87,6 +89,7 @@ const App = () => (
             padding: 12,
             borderLeftWidth: 4,
             borderLeftColor: 'orange',
+            flex: 1,
           }}>
           {container}
         </View>
